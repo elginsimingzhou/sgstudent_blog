@@ -1,0 +1,10 @@
+<h1><%= data.title %></h1>
+<article class="article">
+    <p class="assignment-post__text"><b>Subject:  </b>  <%= data.body %></p>
+    <p class="assignment-post__text"><b>Location:  </b>  <%= data.location %></p>
+    <p class="assignment-post__text"><b>Hours:  </b>  <%= data.hours %></p>
+    <p class="assignment-post__text"><b>Rates:  </b>  <%= data.rates %></p>
+    <p class="assignment-post__text"><b>Gender requested:  </b>  <%= data.gender %></p>
+    <p class="assignment-post__text"><b>Requested by:  </b>  <%= data.author %></p>
+    <a href="/apply/<%= data.title %>" class="btn">Apply now!</a>
+</article>

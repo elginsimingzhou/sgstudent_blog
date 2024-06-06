@@ -1,29 +1,40 @@
 <div class="container">
-    <img
+  <img
     src="/img/smiletutor.jpg"
     alt="person looking out through window"
     width="700"
     height="400"
   />
-  <h1>Welcome to SGStudent Assignments</h1>
-  <p>Apply for assignment with a single click!</p>
+  <h1><%= locals.title %></h1>
+  <p><%= locals.description %></p>
 </div>
+
+<!-- Mass upload of data -->
+<!-- <form action="/assignments" method="POST">
+  <input type="submit" value="Upload"/>
+</form> -->
 
 <section class="articles">
   <h2 class="articles__heading">Latest Assignments</h2>
 
   <ul class="article-ul">
+    <% data.forEach(assignment => { %>
     <li class="assignment__list">
-      <a href="/assignment">
+      <a href="/assignments/<%= assignment.title %>">
         <div class="assignment__details">
-          <span>G0506AJ</span>
+          <span><%= assignment.title %></span>
           <span class="assignment__text">
-            Sec 3 Express Combined Science (Chemistry/Biology) @ 478 Sembawang
-            Drive
+            <%= assignment.createdAt.toDateString() %>
           </span>
+          <span class="assignment__text">
+            <%= assignment.body %> @ <%= assignment.location %>
+          </span>
+          <span class="assignment__text"> <%= assignment.rates %> </span>
+          <span class="assignment__text"> <%= assignment.gender %> </span>
         </div>
-        <a href="/" class="btn" >Apply now!</a>
+        <a href="/apply/<%= assignment.title %>" class="btn">Apply now!</a>
       </a>
     </li>
+    <% }) %>
   </ul>
 </section>
