@@ -1,0 +1,27 @@
+<div class="author">
+  <h1 class="author__heading">Search Results</h1>
+</div>
+
+<section class="articles">
+  <ul class="article-ul">
+    <% data.forEach(assignment => { %>
+    <li class="assignment__list">
+      <a href="/assignments/<%= assignment.title %>">
+        <div class="assignment__details">
+          <span><%= assignment.title %></span>
+          <span class="assignment__text">
+            <%= assignment.createdAt.toDateString() %>
+          </span>
+          <span class="assignment__text">
+            <%= assignment.body %> @ <%= assignment.location %>
+          </span>
+          <span class="assignment__text"> <%= assignment.rates %> </span>
+          <span class="assignment__text"> <%= assignment.gender %> </span>
+        </div>
+        <a href="/apply/<%= assignment.title %>" class="btn">Apply now!</a>
+      </a>
+    </li>
+
+    <% }) %>
+  </ul>
+</section>

@@ -31,6 +31,16 @@ router.get("/apply/:title", (req, res) => {
   res.send(`You have successfully applied for assignment ${title}`);
 });
 
+router.post("/search", async (req, res) => {
+  try {
+    const searchTerm = req.body.searchTerm;
+    const data = await Assignment.find({ body: { "$regex": searchTerm, "$options": "i" } });
+    res.render('search', {data})
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 router.get("/about", (req, res) => {
   const locals = {
     title: "SGStudent Assignments",

@@ -1,0 +1,38 @@
+<a href="/dashboard">&larr; Back</a>
+<div class="admin-title">
+  <h2>Add New Assignment</h2>
+</div>
+
+<form action="/add-post" method="POST">
+  <label for="title"><b>Title</b></label>
+  <input type="text" placeholder="G12345A" name="title" />
+
+  <label for="author"><b>Requested by</b></label>
+  <input type="text" name="author" />
+
+  <label for="hours"><b>Hours</b></label>
+  <input type="text" placeholder="1.5 Hr, 1x A Week" name="hours" />
+
+  <label for="body"><b>Content</b></label>
+  <textarea
+    name="body"
+    cols="50"
+    rows="10"
+    placeholder="Sec 3 NA Comb Bio/Chem (Presbyterian High Sch)"
+  ></textarea>
+
+  <label for="location"><b>Location</b></label>
+  <input type="text" placeholder="Belgravia Drive" name="location" />
+
+  <label for="rates"><b>Rates</b></label>
+  <input
+    type="text"
+    placeholder="$45-60/Hr (FT), $65-75/Hr Max (MOE)"
+    name="rates"
+  />
+
+  <label for="gender"><b>Gender</b></label>
+  <input type="text" placeholder="Male only" name="gender" />
+
+  <input type="submit" value="Add" class="btn" />
+</form>
